@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  sigap-web:
+    build: .
+    container_name: sigap-sekolah
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./reports:/app/reports
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  sigap-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: sigap-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - DATABASE_URL=sqlite:///./data/sigap.db
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+volumes:
+  sigap-data:

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "APL0001",
+    "student_id": "STU0001",
+    "reason": "Test appeal",
+    "submitted_by": "Orang Tua",
+    "status": "PENDING",
+    "created_at": "2026-06-24T20:42:24.745297",
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "decision": null,
+    "notes": []
+  }
+]

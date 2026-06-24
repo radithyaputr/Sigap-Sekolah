@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2026-06-24T20:42:24.746562",
+    "action": "TEST_ACTION",
+    "user": "test_user",
+    "details": {
+      "detail": "test"
+    },
+    "risk_level": "LOW"
+  }
+]
