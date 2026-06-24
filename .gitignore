@@ -8,7 +8,6 @@ venv/
 .venv/
 models/*.pkl
 reports/*.pdf
-data/*.csv
 data/interventions.json
 .idea/
 .vscode/
